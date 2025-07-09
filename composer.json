@@ -1,5 +1,5 @@
 {
-    "name": "yazan/mps-library",
+    "name": "yazan/mps-payment-library",
     "description": "library helps to integrate with MPS Payment Gateway",
     "type": "library",
     "require": {
