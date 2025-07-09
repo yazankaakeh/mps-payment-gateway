@@ -1,22 +1,23 @@
 {
-    "name": "yazzzon/mps-payment-library",
-    "description": "library helps to integrate with MPS Payment Gateway",
-    "type": "library",
-    "require": {
-        "guzzlehttp/guzzle": "^7.9",
-        "vlucas/phpdotenv": "^5.6"
-    },
-    "license": "MIT",
-    "autoload": {
-        "psr-4": {
-            "Yazan\\MpsLibrary\\": "src/"
-        }
-    },
-    "authors": [
-        {
-            "name": "Yazan Kaakeh",
-            "email": "yazanka187@gmail.com"
-        }
-    ],
-    "minimum-stability": "stable"
+  "name": "yazzzon/mps-payment-library",
+  "description": "library helps to integrate with MPS Payment Gateway",
+  "type": "library",
+  "require": {
+    "php": "^8.2",
+    "guzzlehttp/guzzle": "^7.9",
+    "vlucas/phpdotenv": "^5.6"
+  },
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Yazan\\MpsLibrary\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Yazan Kaakeh",
+      "email": "yazanka187@gmail.com"
+    }
+  ],
+  "minimum-stability": "stable"
 }
