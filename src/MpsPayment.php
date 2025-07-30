@@ -1,6 +1,7 @@
 <?php
 
 namespace Yazan\MpsLibrary;
+use Dotenv\Dotenv;
 use Exception;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
@@ -17,7 +18,14 @@ class MpsPayment {
 
     public function __construct(?string $baseUrl = null, ?string $clientId = null, ?string $clientSecret = null)
     {
-        $this->baseUrl =  $baseUrl ?? getenv('PAYMENT_BASE_URL');
+        if (!getenv('PAYMENT_BASE_URL') || !getenv('PAYMENT_CLIENT_ID') || !getenv('PAYMENT_CLIENT_SECRET')) {
+            $envPath = dirname(__DIR__);
+            if (file_exists($envPath . '/.env')) {
+                Dotenv::createImmutable($envPath)->safeLoad();
+            }
+        }
+
+        $this->baseUrl = $baseUrl ?? getenv('PAYMENT_BASE_URL');
         $this->clientId = $clientId ?? getenv('PAYMENT_CLIENT_ID');
         $this->clientSecret = $clientSecret ?? getenv('PAYMENT_CLIENT_SECRET');
         $this->http = new Client(['base_uri' => $this->baseUrl]);

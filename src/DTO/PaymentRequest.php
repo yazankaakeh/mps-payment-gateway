@@ -40,8 +40,8 @@ class PaymentRequest
             throw new InvalidArgumentException('Invalid recipient email.');
         }
 
-        if (!preg_match('/^\d{16}$/', $cardNumber)) {
-            throw new InvalidArgumentException('Card number must be 16 digits.');
+        if (!preg_match('/^\d{15,16}$/', $cardNumber)) {
+            throw new InvalidArgumentException('Card number must be 15 or 16 digits.');
         }
 
         if (!preg_match('/^\d{2}\/\d{2}$/', $cardExpiryDate)) {

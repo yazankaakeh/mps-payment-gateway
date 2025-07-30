@@ -20,7 +20,7 @@ This package allows you to authenticate using client credentials and create paym
 Install via [Composer](https://getcomposer.org):
 
 ```bash
-composer require amin/payment-sdk
+composer require yazzzon/mps-payment-library
 ```
 
 Then run:
@@ -47,7 +47,7 @@ PAYMENT_CLIENT_SECRET=your-client-secret
 
 ### 1. Authenticate
 
-```bash
+```php
 use Yazan\MpsLibrary\MpsPayment;
 
 $gateway = new MpsPayment(); // values loaded from .env
@@ -60,8 +60,8 @@ if ($gateway->authenticate()) {
 ```
 ### 2. Create a Payment
 
-```bash
-use Amin\PaymentSDK\DTO\PaymentRequest;
+```php
+use Yazan\MpsLibrary\DTO\PaymentRequest;
 
 $request = new PaymentRequest(
     product: 'Pro Subscription',
@@ -103,7 +103,7 @@ See the full license text in the `LICENSE` file.
 ## 🤝 Contributions
 
 Contributions, issues, and feature requests are welcome!  
-Please feel free to fix the repository and submit a pull request.
+Please feel free to fork the repository and submit a pull request.
 
 If you find a bug or have a suggestion, please open an issue on GitHub.
 
